@@ -1,0 +1,9 @@
+Creating a subprocess to perform the calling_python_function.
+
+Compile script:
+gcc -o calling_python_with_process calling_python_with_process.c -I/usr/include/python3.8/ -lpython3.8
+gcc -o calling_python_with_process_wait calling_python_with_process_wait.c -I/usr/include/python3.8/ -lpython3.8
+
+Run script:
+./calling_python_with_process
+./calling_python_with_process_wait

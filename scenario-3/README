@@ -1,0 +1,7 @@
+Creating two threads (writing into queue and reading from the queue) and a queue to hold the data. The size of the queue is 1000 of 1000 strings.
+
+Compile script:
+gcc -o two_threads_single_process twot_threads_single_process.c -lpthread -I/usr/include/python3.8/ -lpython3.8
+
+Run script:
+./two_threads_single_process

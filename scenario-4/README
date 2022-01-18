@@ -1,0 +1,28 @@
+two_process_with_socket - consist of the two socket, one for vcan and one for localhost:8080 socket.
+Compile:
+gcc -o first_program first_program.c -lpthread -I/usr/include/python3.8/ -lpython3.8
+
+
+second_program - consist of listening to the localhost 8080 and calling the python code.
+Compile:
+gcc second_program.c -o second_program -I/usr/include/python3.8/ -lpython3.8
+
+I modified the "can_id: 0x%03X data length: %d data: %02X" to three digit (0x%03X) in two_process_with_socket.c
+and changed the pid_values array for 95 and 93 to 095 and 093 in messages_correlation.py.
+
+First program
+Enqueue time - the time right after performed enqueue
+Dequeue time - the time right after performed dequeue
+start time - the time start collect data
+End time - the time after send to process 2
+End batch time - when there is 1000 line and ready to enqueue
+Time taken to send socket - how much time socket take to send
+Time between Start and End batch time - Time between start and finished received 1 batch
+Time in queue - the time that the batch sit in queue
+Time between Start and End- the total time that from start to end
+
+Second program
+start time - the time start collect data from socket_time
+socket process time - the time socket take to receive 1 batch_time_taken
+time between end batch and end - the time after received 1000 lines and called the python function to the end.
+time between start and end - the total time from start to end including analysis
